@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Hyperlink</title>
+</head>
+<body>
+
+    <label for="environment">Environment:</label>
+    <select id="environment">
+        <option value="tst">tst</option>
+        <option value="acc">acc</option>
+        <option value="prod">prod</option>
+    </select>
+    <br>
+
+    <label for="oddSessionYear">Odd Session Year:</label>
+    <input type="number" id="oddSessionYear" name="oddSessionYear">
+    <br>
+
+    <label for="sessionType">Session Type:</label>
+    <input type="number" id="sessionType" name="sessionType">
+    <br>
+
+    <label for="measureType">Measure Type:</label>
+    <input type="text" id="measureType" name="measureType">
+    <br>
+
+    <label for="measureNumber">Measure Number:</label>
+    <input type="text" id="measureNumber" name="measureNumber">
+    <br>
+
+    <button onclick="generateLink()">Generate Hyperlink</button>
+
+    <p id="output"></p>
+
+    <script>
+        function generateLink() {
+            var environment = document.getElementById("environment").value;
+            var oddSessionYear = document.getElementById("oddSessionYear").value;
+            var sessionType = document.getElementById("sessionType").value;
+            var measureType = document.getElementById("measureType").value;
+            var measureNumber = document.getElementById("measureNumber").value;
+
+            var hyperlink = "https://example.com/path?env=" + environment +
+                            "&oddYear=" + oddSessionYear +
+                            "&sessionType=" + sessionType +
+                            "&measureType=" + measureType +
+                            "&measureNumber=" + measureNumber;
+
+            document.getElementById("output").innerHTML = "<a href='" + hyperlink + "'>" + hyperlink + "</a>";
+        }
+    </script>
+
+</body>
+</html>
