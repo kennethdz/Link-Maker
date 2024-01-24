@@ -37,12 +37,14 @@
 
     <script>
         function generateLink() {
-            var environment = document.getElementById("environment").value;
-            var oddSessionYear = document.getElementById("oddSessionYear").value;
-            var sessionType = document.getElementById("sessionType").value;
-            var measureType = document.getElementById("measureType").value;
-            var measureNumber = document.getElementById("measureNumber").value;
+            var environment = document.getElementById("environment").value.trim();
+            var oddSessionYear = document.getElementById("oddSessionYear").value.trim();
+            var sessionType = document.getElementById("sessionType").value.trim();
+            var measureType = document.getElementById("measureType").value.trim().toUpperCase();
+            var measureNumber = document.getElementById("measureNumber").value.trim();
 
+            if environment == "prod" environment = "";
+            else environment = "-" + environment;
             var hyperlink = "https://example.com/path?env=" + environment +
                             "&oddYear=" + oddSessionYear +
                             "&sessionType=" + sessionType +
