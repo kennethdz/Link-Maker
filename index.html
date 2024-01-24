@@ -43,8 +43,11 @@
             var measureType = document.getElementById("measureType").value.trim().toUpperCase();
             var measureNumber = document.getElementById("measureNumber").value.trim();
 
-            if (environment == "prod") {environment = ""}
-            else {environment = "-" + environment}
+            if (environment === "prod") {
+                environment = "";
+            } else {
+                environment = "-" + environment;
+            }
             var hyperlink = "https://example.com/path?env=" + environment +
                             "&oddYear=" + oddSessionYear +
                             "&sessionType=" + sessionType +
